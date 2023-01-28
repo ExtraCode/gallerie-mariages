@@ -1,0 +1,26 @@
+.anita-container {
+  padding-top: 150px;
+}
+
+.button-menu {
+  @media(min-width: 992px) {
+    display: none !important;
+  }
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: white;
+}
+
+a:focus, a:visited {
+  color: inherit;
+}
+
+.dropdown-menu {
+  background-color: #505050;
+  color: white;
+}

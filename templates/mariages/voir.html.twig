@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <!-- Page Container -->
+    <div class="anita-container">
+
+        <!-- Page Content -->
+        <section class="anita-section" data-aos="fade-up">
+
+            <div class="text-center pb-5">
+                <p class="fs-1 mb-3">{{ album }}</p>
+                <p><small>{{ images|length }} images</small></p>
+            </div>
+
+            <div class="anita-masonry anita-grid-gallery anita-grid-3cols anita-zoom-hover anita-item-zoom-hover anita-item-fade-hover">
+
+                {% for image in images %}
+
+                    {% set imageSize = getimagesize(image) %}
+
+                    <div class="anita-grid-gallery-item">
+                        <div class="anita-grid-item__inner">
+                            <div class="anita-grid-item__image">
+                                <img src="{{ asset(image) }}" class="anita-lazy" data-src="{{ asset(image) }}"
+                                     width="{{ imageSize[0] }}"  height="{{ imageSize[1] }}">
+                            </div>
+                            <a href="{{ asset(image) }}" class="anita-lightbox-link"
+                               data-size="{{ imageSize[0] }}x{{ imageSize[1] }}"></a>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div><!-- .anita-works-grid -->
+
+        </section>
+
+    </div><!-- .anita-container -->
+
+{% endblock %}
